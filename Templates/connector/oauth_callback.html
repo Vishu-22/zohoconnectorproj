@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zoho OAuth Result</title>
+  <link rel="stylesheet" href="/Templates/connector/style.css" />
+  <style>
+    .callback-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      background: #0c0f1a;
+      color: #f5f6fa;
+    }
+    .callback-card {
+      width: 100%;
+      max-width: 720px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    }
+    .callback-card h1 {
+      margin-bottom: 16px;
+      font-size: 28px;
+    }
+    .token-block {
+      margin-top: 24px;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      word-break: break-all;
+    }
+    .token-label {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 8px;
+    }
+    .token-actions {
+      margin-top: 12px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .token-actions button {
+      background: #1f6feb;
+      border: none;
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .error-text {
+      color: #ff6b6b;
+    }
+  </style>
+</head>
+<body>
+  <div class="callback-page">
+    <div class="callback-card">
+      <h1 id="statusTitle">Processing OAuth response...</h1>
+      <p id="statusMessage">Please wait while we finalize your tokens.</p>
+
+      <div id="tokenContainer" style="display:none;">
+        <div class="token-block">
+          <div class="token-label">Access Token</div>
+          <div id="accessToken"></div>
+          <div class="token-actions">
+            <button id="copyAccess">Copy Access Token</button>
+          </div>
+        </div>
+
+        <div class="token-block">
+          <div class="token-label">Refresh Token</div>
+          <div id="refreshToken"></div>
+          <div class="token-actions">
+            <button id="copyRefresh">Copy Refresh Token</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/static/js/env.js"></script>
+  <script src="/static/js/supabaseClient.js"></script>
+  <script src="/Templates/connector/oauth_callback.js"></script>
+</body>
+</html>

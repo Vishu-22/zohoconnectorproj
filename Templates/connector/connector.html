@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Encap - Zoho Connector | Seamless Token Management & Integration</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="/Templates/connector/style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo-container">
+      <img src="/static/encaptechno-logo.svg" alt="Encap Logo" />
+    </div>
+    <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+    <div class="auth-buttons">
+      <!-- Auth buttons can be added here if needed -->
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content animate__animated animate__fadeIn">
+      <h1>Transform Your Business with Zoho Integration</h1>
+      <p>Seamless token management, automated authentication, and powerful connectivity across the Zoho ecosystem</p>
+      <a class="cta-button" href="#auth-section"><i class="fas fa-rocket"></i> Start Integrating Now</a>
+    </div>
+  </section>
+
+  <section class="quick-features">
+    <div class="quick-feature animate__animated animate__fadeInUp" data-delay="0.1s">
+      <i class="fas fa-lock"></i>
+      <h3>Enterprise Security</h3>
+      <p>Bank-grade encryption and secure OAuth2 implementation for your tokens</p>
+    </div>
+    <div class="quick-feature animate__animated animate__fadeInUp" data-delay="0.2s">
+      <i class="fas fa-sync"></i>
+      <h3>Auto Token Refresh</h3>
+      <p>Never worry about expired tokens with automated refresh management</p>
+    </div>
+    <div class="quick-feature animate__animated animate__fadeInUp" data-delay="0.3s">
+      <i class="fas fa-plug"></i>
+      <h3>Universal Connectivity</h3>
+      <p>Integrate with 50+ Zoho applications through a single connection</p>
+    </div>
+    <div class="quick-feature animate__animated animate__fadeInUp" data-delay="0.4s">
+      <i class="fas fa-code"></i>
+      <h3>Developer Friendly</h3>
+      <p>Comprehensive APIs and SDKs for all major programming languages</p>
+    </div>
+  </section>
+
+  <section class="auth-section" id="auth-section">
+    <div class="auth-container">
+      <div class="auth-info animate__animated animate__fadeInLeft">
+        <h2 class="section-title">Zoho OAuth Made Simple</h2>
+        <p class="section-subtitle">Streamline your Zoho integration process with our secure OAuth connector</p>
+        
+        <div class="token-flow">
+          <div class="token-step" data-position="left-top">
+            <i class="fas fa-user-shield"></i>
+            <p>Create Client</p>
+          </div>
+          <div class="token-arrow" data-position="arrow-1"></div>
+          
+          <div class="token-step" data-position="right-top">
+            <i class="fas fa-key pulse-animation"></i>
+            <p>Generate Token</p>
+          </div>
+          <div class="token-arrow" data-position="arrow-2"></div>
+          
+          <div class="token-step" data-position="right-bottom">
+            <i class="fas fa-sync-alt"></i>
+            <p>Auto Refresh</p>
+          </div>
+          <div class="token-arrow" data-position="arrow-3"></div>
+          
+          <div class="token-step" data-position="left-bottom">
+            <i class="fas fa-plug"></i>
+            <p>Connect Apps</p>
+          </div>
+        </div>
+        
+        <div class="form-tip">
+          <strong><i class="fas fa-lightbulb"></i> Pro Tip:</strong> 
+          OAuth 2.0 is the industry standard for secure API authentication. Our connector handles the complete flow, from initial authorization to token refresh.
+        </div>
+      </div>
+      
+      <div class="auth-form-container animate__animated animate__fadeInRight">
+        <h2 class="section-title">
+          <i class="fas fa-shield-alt"></i>
+          Zoho OAuth Authentication
+        </h2>
+        <form method="POST" id="oauthForm">
+          <div class="form-group">
+            <label class="form-label" for="client_id">Client ID:</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-key"></i></span>
+              </div>
+              <input type="text" class="form-control" id="client_id" name="client_id" placeholder="Enter your client ID" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="client_secret">Client Secret:</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+              </div>
+              <input type="password" class="form-control" id="client_secret" name="client_secret" placeholder="Enter your client secret" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="redirect_url">Redirect URL:</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-link"></i></span>
+              </div>
+              <input type="text" class="form-control" id="redirect_url" name="redirect_url" value="" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="region">Select Zoho Region:</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input.in-group-text"><i class="fas fa-globe"></i></span>
+              </div>
+              <select id="region" name="region" class="form-control" required>
+                <option value="select">Select your region</option>
+                <option value="US">United States (US)</option>
+                <option value="AU">Australia (AU)</option>
+                <option value="EU">Europe (EU)</option>
+                <option value="IN">India (IN)</option>
+                <option value="CN">China (CN)</option>
+                <option value="JP">Japan (JP)</option>
+                <option value="SA">Saudi Arabia (SA)</option>
+                <option value="CA">Canada (CA)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Select Scopes:</label>
+            <div id="applicationsContainer" class="dropdown-container">
+              <div class="dropdown-input" id="applicationsDropdown">
+                <div class="dropdown-input-text" id="selectedAppText">Select scopes</div>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="dropdown-list" id="applicationsList">
+                <!-- Applications and Scopes will be dynamically rendered from database -->
+              </div>
+              <div class="selected-scopes-display" id="selectedScopesDisplay"></div>
+            </div>
+          </div>
+
+          <input type="hidden" id="application_id" name="application_id" />
+          <input type="hidden" id="scopes" name="scopes" />
+
+          <div class="form-group text-center">
+            <button type="submit" class="btn-authenticate" id="authenticateBtn" disabled>
+              <i class="fas fa-lock me-2"></i> Authenticate
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+  <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+  
+  <footer class="footer">
+    <div class="footer-wave">
+      
+    </div>
+    <div class="footer-content">
+      <div class="footer-section">
+        <div class="logo-container">
+          <img src="/static/encaptechno-logo.svg" alt="Encap Logo" />
+        </div>
+        <p class="footer-tagline">Zoho Connector – Your trusted partner for secure, seamless integration with Zoho's ecosystem since 2025.</p>
+        <div class="social-icons">
+          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="social-icon">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://twitter.com" target="_blank" aria-label="Twitter" class="social-icon">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://github.com" target="_blank" aria-label="GitHub" class="social-icon">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="social-icon">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3 class="footer-heading">Quick Links</h3>
+        <div class="footer-links">
+          <a href="#about" class="footer-link"><i class="fas fa-angle-right"></i> About</a>
+          <a href="#solutions" class="footer-link"><i class="fas fa-angle-right"></i> Solutions</a>
+          <a href="#how-it-works" class="footer-link"><i class="fas fa-angle-right"></i> How It Works</a>
+          <a href="#apps" class="footer-link"><i class="fas fa-angle-right"></i> Applications</a>
+          <a href="#faq" class="footer-link"><i class="fas fa-angle-right"></i> FAQ</a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3 class="footer-heading">Contact Us</h3>
+        <div class="contact-info">
+  <p class="contact-item"><i class="fas fa-envelope"></i> Email: <a href="mailto:cantact@encaptechno.com" class="contact-link">contact@encaptechno.com</a></p>
+  <p class="contact-item"><i class="fas fa-phone-alt" ></i> Phone: +1-416-405-8185</p>
+  <p class="contact-item"><i class="fas fa-map-marker-alt"></i> Address: 526, 305 E Huntland Dr, Austin,TX 78752, United States</p>
+</div>
+        <div class="newsletter-signup">
+          <p class="newsletter-text">Stay in the loop with our newsletter</p>
+          <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+            <div class="form-group">
+              <input type="email" placeholder="Your email" required class="newsletter-input" />
+              <button type="submit" class="newsletter-button">
+                <i class="fas fa-paper-plane"></i> Subscribe
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p class="copyright">© 2025 Zoho Connector. All Rights Reserved.</p>
+        <div class="footer-legal">
+          <a href="#" class="legal-link">Terms of Service</a>
+          <span class="separator">|</span>
+          <a href="#" class="legal-link">Privacy Policy</a>
+          <span class="separator">|</span>
+          <a href="#" class="legal-link">Accessibility</a>
+          <span class="separator">|</span>
+          <a href="#" class="legal-link">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/static/js/env.js"></script>
+  <script src="/static/js/supabaseClient.js"></script>
+  <script src="/Templates/connector/script.js"></script>
+</body>
+</html>

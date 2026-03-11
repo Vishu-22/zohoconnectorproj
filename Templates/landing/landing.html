@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zoho Connector - Access Token & Refresh Token Generation</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="Templates/landing/cstyle.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo-container" aria-label="Zoho Connector Home">
+            <img src="/static/encaptechno-logo.svg" alt="Encaptechno Logo" />
+        </div>
+        <nav role="navigation" id="mainNav">
+            <a href="#about">About</a>
+            <a href="#solutions">Solutions</a>
+            <a href="#apps">Applications</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="auth-buttons">
+            <a class="cta-button login-button" href="/Templates/Signin_up/signin.html" aria-label="Login">
+                <i class="fas fa-sign-in-alt"></i> Login
+            </a>
+            <a class="cta-button signup-button" href="/Templates/Signin_up/signin.html" aria-label="Signup">
+                <i class="fas fa-user-plus"></i> Signup
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" role="banner">
+        <div class="hero-content fade-in">
+            <h1>Empower Your Business with Zoho Solutions</h1>
+            <p>
+                Zoho Connector streamlines your operations with secure, automated access token and refresh token generation – enabling seamless integration across multiple Zoho applications.
+            </p>
+            <a class="cta-button" href="/Templates/Signin_up/signin.html">
+                <i class="fas fa-magic"></i> Get Started Now
+            </a>
+        </div>
+    </section>
+
+    <!-- QUICK FEATURES -->
+    <section class="quick-features">
+        <div class="quick-feature fade-in">
+            <i class="fas fa-wallet"></i>
+            <h3>Master Your Finances</h3>
+            <p>Complete control with Zoho's Finance Suite.</p>
+        </div>
+        <div class="quick-feature fade-in">
+            <i class="fas fa-robot"></i>
+            <h3>Eliminate Complexity</h3>
+            <p>Automate processes – say goodbye to manual tasks.</p>
+        </div>
+        <div class="quick-feature fade-in">
+            <i class="fas fa-fighter-jet"></i>
+            <h3>Achieve More, Faster</h3>
+            <p>Boost efficiency with integrated Zoho apps.</p>
+        </div>
+    </section>
+
+    <!-- MEET SECTION -->
+    <section class="meet-section" id="about">
+        <div class="meet-image fade-in">
+            <img src="/static/66f2d4a912827dbc4bdb2cbe_ooooooo-p-800.jpg" alt="Our Team" />
+        </div>
+        <div class="meet-content fade-in">
+            <h2>Our Approach is Simple</h2>
+            <p>
+                We assess your business needs, customize solutions, and integrate them smoothly. No overwhelming tech talk—just clear, actionable steps that drive efficiency and growth for your business.
+            </p>
+            <a href="#about" class="learn-about">
+                Learn About Us <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- SOLUTIONS SECTION -->
+    <section class="solutions-section" id="solutions">
+        <div class="solutions-title fade-in">
+            <h2>Zoho Finance Solutions</h2>
+            <p>
+                Monitor expenses, manage operations, and handle payroll seamlessly with Zoho's suite of applications.
+            </p>
+        </div>
+        <div class="solution-cards">
+            <div class="solution-card fade-in">
+                <img src="/static/zoho_books.png" alt="Zoho Books" class="solution-image" />
+                <h3>Zoho Books</h3>
+                <p>Simplify accounting with real-time tracking and invoicing.</p>
+            </div>
+            <div class="solution-card fade-in">
+                <img src="/static/zoho_inventory.png" alt="Zoho Inventory" class="solution-image" />
+                <h3>Zoho Inventory</h3>
+                <p>Streamline order management and gain stock visibility.</p>
+            </div>
+            <div class="solution-card fade-in">
+                <img src="/static/zoho_payroll.png" alt="Zoho Payroll" class="solution-image" />
+                <h3>Zoho Payroll</h3>
+                <p>Automate payroll and tax calculations effortlessly.</p>
+            </div>
+            <div class="solution-card fade-in">
+                <img src="/static/zoho_finance_plus.png" alt="Zoho Finance Plus" class="solution-image" />
+                <h3>Zoho Finance Plus</h3>
+                <p>A unified platform for invoicing, subscriptions, and more.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MASTERING SECTION -->
+    <section class="mastering-section">
+        <div class="mastering-title fade-in">
+            <h2>Expertise That Transforms Challenges into Opportunities</h2>
+            <p>
+                Leverage Zoho’s powerful suite to master your finances—from planning to execution.
+            </p>
+        </div>
+        <div class="mastering-cards">
+            <div class="mastering-card fade-in" data-delay="0">
+                <img src="/static/Planning_analysis.png" alt="Financial Planning" />
+                <h3>Financial Planning & Analysis</h3>
+                <p>Forecast, set budgets, and make data-driven decisions.</p>
+            </div>
+            <div class="mastering-card fade-in" data-delay="200">
+                <img src="/static/accounting_bookkeeping.png" alt="Accounting & Bookkeeping" />
+                <h3>Accounting & Bookkeeping</h3>
+                <p>Streamline workflows with Zoho Books for accurate records.</p>
+            </div>
+            <div class="mastering-card fade-in" data-delay="400">
+                <img src="/static/zoho_for_startups_logo.png" alt="Business Setup" />
+                <h3>Business Setup</h3>
+                <p>Launch ventures confidently with integrated Zoho tools.</p>
+            </div>
+            <div class="mastering-card fade-in" data-delay="600">
+                <img src="/static/zoho_payroll.png" alt="Zoho Payroll" />
+                <h3>Zoho Payroll</h3>
+                <p>Manage salaries and compliance with ease.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECRET WEAPON SECTION -->
+    <section class="secret-weapon fade-in">
+        <h2>Your Business’s Secret Weapon – Zoho One</h2>
+        <p>
+            Empower your entire organization with a comprehensive suite for CRM, finances, and operations.
+        </p>
+        <a class="cta-button" href="#contact" aria-label="Get Started with Zoho One">
+            Get Started Today
+        </a>
+    </section>
+
+    <!-- WHY CHOOSE US SECTION -->
+    <section class="why-choose fade-in">
+        <h2>Why Choose Zoho Connector?</h2>
+        <p>
+            Unlock your business potential with secure, expert financial advice and innovative technology for seamless token generation.
+        </p>
+        <div class="why-stats">
+            <div class="stat fade-in" data-delay="0">
+                <h3>80<span class="plus">+</span></h3>
+                <span class="stat-title">Business Growth</span>
+                <span class="stat-subtitle">Driving Success and Expansion</span>
+            </div>
+            <div class="stat fade-in" data-delay="200">
+                <h3>100<span class="plus">+</span></h3>
+                <span class="stat-title">Trusted Clients</span>
+                <span class="stat-subtitle">Proven Reliability</span>
+            </div>
+            <div class="stat fade-in" data-delay="400">
+                <h3>100<span class="plus">+</span></h3>
+                <span class="stat-title">Secure Token Generation</span>
+                <span class="stat-subtitle">Safe and Seamless Integration</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- AUTHENTICATION STEPS -->
+    <section class="auth-steps" id="how-it-works">
+        <div class="steps-container">
+            <div class="steps-title fade-in">
+                <h2>How It Works</h2>
+                <p>Follow these simple steps to integrate with Zoho and generate tokens</p>
+            </div>
+            <div class="step-list">
+                <div class="step fade-in">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Create Zoho Client</h3>
+                        <p>Register a client in the Zoho API Console to get your Client ID & Secret.</p>
+                        <div class="step-tip">
+                            <strong>Tip:</strong> Add <code>http://localhost:8000/Templates/connector/oauth_callback.html</code> as an authorized URI.
+                        </div>
+                    </div>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Enter Credentials</h3>
+                        <p>Provide your Client ID, Client Secret, region, and desired scopes.</p>
+                    </div>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Authenticate</h3>
+                        <p>Initiate the OAuth flow – Zoho handles secure authorization.</p>
+                    </div>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Retrieve Tokens</h3>
+                        <p>Receive your access and refresh tokens securely.</p>
+                        <div class="step-tip">
+                            <strong>Tip:</strong> Save your refresh token for future renewals.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- APPLICATION SUPPORT SECTION -->
+    <section class="app-support" id="apps" aria-label="Supported Applications">
+        <h2>Support for <span class="highlight">50+ Zoho Applications</span></h2>
+        <p>
+            Seamlessly integrate with a wide range of Zoho tools to optimize your business workflows.
+        </p>
+        <div class="app-grid">
+            <!-- First Row: 5 Applications -->
+            <div class="app-icon" title="Zoho CRM">
+                <img src="/static/crm-128.png" alt="Zoho CRM" class="app-image" />
+                <p>Zoho CRM</p>
+            </div>
+            <div class="app-icon" title="Zoho Projects">
+                <img src="/static/project.png" alt="Zoho Projects" class="app-image" />
+                <p>Zoho Projects</p>
+            </div>
+            <div class="app-icon" title="Zoho Meeting">
+                <img src="/static/Meeting-256.png" alt="Zoho Meeting" class="app-image" />
+                <p>Zoho Meeting</p>
+            </div>
+            <div class="app-icon" title="Zoho Mail">
+                <img src="/static/mail-64.png" alt="Zoho Mail" class="app-image" />
+                <p>Zoho Mail</p>
+            </div>
+            <div class="app-icon" title="Zoho Analytics">
+                <img src="/static/zoho_books.png" alt="Zoho Analytics" class="app-image" />
+                <p>Zoho Analytics</p>
+            </div>
+            <!-- Second Row: 3 Applications -->
+            <div class="app-icon" title="Zoho Inventory">
+                <img src="/static/inventory.png" alt="Zoho Inventory" class="app-image" />
+                <p>Zoho Inventory</p>
+            </div>
+            <div class="app-icon" title="Zoho Sign">
+                <img src="/static/Sign-512.png" alt="Zoho Sign" class="app-image" />
+                <p>Zoho Sign</p>
+            </div>
+            <div class="app-icon" title="Zoho Forms">
+                <img src="/static/Forms-1024.png" alt="Zoho Forms" class="app-image" />
+                <p>Zoho Forms</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section" id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item fade-in">
+            <div class="faq-question">What services does Zoho Connector offer?</div>
+            <div class="faq-answer">
+                We offer secure token generation, real-time analytics, and expert support for seamless Zoho integration.
+            </div>
+        </div>
+        <div class="faq-item fade-in">
+            <div class="faq-question">How does the token generation process work?</div>
+            <div class="faq-answer">
+                Our platform securely communicates with Zoho’s OAuth API to generate access and refresh tokens.
+            </div>
+        </div>
+        <div class="faq-item fade-in">
+            <div class="faq-question">Is my data secure?</div>
+            <div class="faq-answer">
+                Absolutely. We use industry-standard encryption and never store your credentials. Your data is 100% secure.
+            </div>
+        </div>
+        <div class="faq-item fade-in">
+            <div class="faq-question">What if I encounter an error?</div>
+            <div class="faq-answer">
+                Our troubleshooting resources and interactive chatbot will help you resolve common issues quickly.
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT CTA -->
+    <section class="contact-cta fade-in" id="contact">
+        <h2>Ready to Streamline Your Operations?</h2>
+        <p>
+            Contact us today to transform your financial and operational workflows with Zoho Connector.
+        </p>
+        <a class="cta-button" href="#contact" aria-label="Contact Zoho Connector">
+            Contact Us Now
+        </a>
+    </section>
+
+    <!-- CHATBOT TOGGLE & WINDOW -->
+    <div class="chatbot-toggle" id="chatbotToggle" title="Chat with our assistant">
+        <i class="fas fa-comments"></i>
+    </div>
+    <div class="chatbot" id="chatbot">
+        <div class="chatbot-header">
+            <span>Assistant</span>
+            <button id="closeChat" class="close-chat-button">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <p>Hello! How can I help you with Zoho authentication?</p>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatInput" placeholder="Type your question..." />
+            <button id="sendChat"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+              <div class="logo-container">
+                <img src="/static/encaptechno-logo.svg" alt="Zoho Connector Logo" class="footer-logo" />
+            </div>
+                <p class="footer-tagline">Zoho Connector – Your trusted partner for secure, seamless integration with Zoho's ecosystem since 2025.</p>
+                <div class="social-icons">
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" aria-label="Twitter" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://github.com" target="_blank" aria-label="GitHub" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-heading">Quick Links</h3>
+                <div class="footer-links">
+                    <a href="#about" class="footer-link"><i class="fas fa-angle-right"></i> About</a>
+                    <a href="#solutions" class="footer-link"><i class="fas fa-angle-right"></i> Solutions</a>
+                    <a href="#how-it-works" class="footer-link"><i class="fas fa-angle-right"></i> How It Works</a>
+                    <a href="#apps" class="footer-link"><i class="fas fa-angle-right"></i> Applications</a>
+                    <a href="#faq" class="footer-link"><i class="fas fa-angle-right"></i> FAQ</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-heading">Contact Us</h3>
+                <div class="contact-info">
+                    <p class="contact-item"><i class="fas fa-envelope"></i> Email: <a href="mailto: contact@encaptechno.com" class="contact-link"> contact@encaptechno.com</a></p>                    <p class="contact-item"><i class="fas fa-phone-alt"></i> Phone: +1-416-405-8185</p>
+                    <p class="contact-item"><i class="fas fa-map-marker-alt"></i> Address: 526, 305 E Huntland Dr, Austin,TX 78752, United States</p>
+                </div>
+                <div class="newsletter-signup">
+                    <p class="newsletter-text">Stay in the loop with our newsletter</p>
+                    <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                        <div class="form-group">
+                            <input type="email" placeholder="Your email" required class="newsletter-input" />
+                            <button type="submit" class="newsletter-button">
+                                <i class="fas fa-paper-plane"></i> Subscribe
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p class="copyright">© 2025 Zoho Connector. All Rights Reserved.</p>
+                <div class="footer-legal">
+                    <a href="#" class="legal-link">Terms of Service</a>
+                    <span class="separator">|</span>
+                    <a href="#" class="legal-link">Privacy Policy</a>
+                    <span class="separator">|</span>
+                    <a href="#" class="legal-link">Accessibility</a>
+                    <span class="separator">|</span>
+                    <a href="#" class="legal-link">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+  <script src="Templates/landing/cstyle.js"></script>
+</body>
+</html>

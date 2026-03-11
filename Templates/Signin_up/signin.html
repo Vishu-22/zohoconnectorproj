@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/Templates/Signin_up/style.css">
+  <title>AI Generative - Sign In/Sign Up</title>
+</head>
+<body>
+  <div class="left-panel">
+    <div class="logo-container">
+      <div class="logo">
+        <img src="/static/encaptechno-logo.svg" alt="Encaptechno Logo" class="logo-img">
+      </div>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="header-section">
+        <div class="zoho-logo"></div>
+        <h1>Are Outdated Integrations Limiting Your Growth?</h1>
+        <p>The Future of Business Integration Starts Here!</p>
+      </div>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📈</div>
+        <h3>Business Growth</h3>
+        <p>Accelerate your business growth with seamless integrations</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔄</div>
+        <h3>Efficient Operations</h3>
+        <p>Streamline your operations with real-time data synchronization</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>High Performance</h3>
+        <p>Optimized API calls with intelligent caching and rate limiting</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Data-Driven Insights</h3>
+        <p>Built-in monitoring and detailed usage analytics</p>
+      </div>
+    </div>
+
+    <div class="stats-section">
+      <div class="stat-item">
+        <div class="stat-number">50+</div>
+        <div>Zoho Apps</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">99.9%</div>
+        <div>Uptime</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">10ms</div>
+        <div>Low Latency</div>
+      </div>
+    </div>
+
+    <section class="testimonial-section">
+      <div class="container">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <div class="testimonial-slider">
+          <div class="testimonial">
+            <p>"Encaptechno’s Zoho integration completely transformed our workflow. The automation saved us countless hours!"</p>
+            <h4>- <span class="author">Sarah Johnson</span>, CTO at <span class="company">TechCorp</span></h4>
+          </div>
+          <div class="testimonial">
+            <p>"The OAuth implementation was seamless and secure. We can now manage authentication effortlessly!"</p>
+            <h4>- <span class="author">Michael Lee</span>, Product Manager at <span class="company">CloudX</span></h4>
+          </div>
+          <div class="testimonial">
+            <p>"Professional, reliable, and efficient! Encaptechno’s solution exceeded our expectations."</p>
+            <h4>- <span class="author">Amanda Smith</span>, Founder of <span class="company">FinTechPro</span></h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="certifications-section">
+      <h2>Certifications & Partners</h2>
+      <div class="certifications-grid">
+        <div class="certification-item">
+          <img src="/static/zoho partner badge-p-2000.png" alt="Zoho Authorized Partner">
+        </div>
+        <div class="certification-item">
+          <img src="/static/Zoho Creator Certified Badge-p-500.png" alt="Zoho Creator Certified Expert">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="right-panel">
+    <div class="auth-container">
+      <h2 id="authTitle">Login</h2>
+      <form id="authForm" method="POST">
+        <input type="hidden" id="action" name="action" value="signin">
+
+        <div class="input-group" id="nameGroup">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="first_name" placeholder="Enter your first name">
+          <span class="error-message" id="firstNameError"></span>
+        </div>
+
+        <div class="input-group" id="lastNameGroup">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="last_name" placeholder="Enter your last name">
+          <span class="error-message" id="lastNameError"></span>
+        </div>
+
+        <div class="input-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+          <span class="error-message" id="emailError"></span>
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required>
+          <span class="error-message" id="passwordError"></span>
+          <span class="show-password" onclick="togglePassword('password')">👁️</span>
+        </div>
+
+        <div class="input-group" id="confirmPasswordGroup">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" name="confirm_password" placeholder="Confirm your password">
+          <span class="show-password" onclick="togglePassword('confirmPassword')">👁️</span>
+          <span class="error-message" id="confirmPasswordError"></span>
+        </div>
+
+        <button type="submit" class="auth-btn" id="authButton">Sign In</button>
+      </form>
+
+      <div class="toggle-form">
+        <button id="toggleForm">Don't have an account? Sign Up</button>
+      </div>
+    </div>
+  </div>
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/static/js/env.js"></script>
+  <script src="/static/js/supabaseClient.js"></script>
+  <script src="/Templates/Signin_up/style.js" defer></script>
+</body>
+</html>
