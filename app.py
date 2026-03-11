@@ -19,16 +19,19 @@ import re
 from dotenv import load_dotenv
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='Templates')
 
 # ----------------------
 # Configuration
 # ----------------------
 
 # Configure Secret Key for Session
-app.config['SECRET_KEY'] = 'your_secure_random_secret_key'  # Replace with a strong secret key
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'your_secure_random_secret_key')
 app.config['SESSION_TYPE'] = 'filesystem'
-app.config['SESSION_FILE_DIR'] = Path('./flask_session')
+
+# Use /tmp on serverless platforms like Vercel; fallback to local folder for dev
+session_dir = Path(os.getenv('SESSION_DIR', '/tmp/flask_session'))
+app.config['SESSION_FILE_DIR'] = session_dir
 app.config['SESSION_PERMANENT'] = False
 
 # Initialize Extensions
@@ -44,7 +47,7 @@ limiter = Limiter(
 # ----------------------
 
 # Ensure log directory exists using pathlib
-log_dir = Path('logs')
+log_dir = Path(os.getenv('LOG_DIR', '/tmp/logs'))
 log_dir.mkdir(exist_ok=True)
 
 logger = logging.getLogger('main_app')
@@ -54,7 +57,7 @@ formatter = logging.Formatter('%(asctime)s [%(levelname)s] %(name)s: %(message)s
 
 # File handler for all logs
 file_handler = RotatingFileHandler(
-    'logs/app.log',
+    str(log_dir / 'app.log'),
     maxBytes=1024 * 1024,  # 1MB
     backupCount=5
 )
@@ -63,7 +66,7 @@ file_handler.setFormatter(formatter)
 
 # File handler for errors
 error_handler = RotatingFileHandler(
-    'logs/backend.log',
+    str(log_dir / 'backend.log'),
     maxBytes=1024 * 1024,
     backupCount=5
 )
@@ -162,8 +165,9 @@ def init_database():
         if conn is not None and conn.is_connected():
             conn.close()
 
-# Initialize database on startup
-init_database()
+# Initialize database on startup only when explicitly enabled
+if os.getenv('ENABLE_DB_INIT') == '1':
+    init_database()
 
 # Function to get database connection
 def get_db_connection():
@@ -852,8 +856,8 @@ def is_valid_email(email):
 # ----------------------
 
 def ensure_directories():
-    Path('./flask_session').mkdir(exist_ok=True)
-    Path('./logs').mkdir(exist_ok=True)
+    session_dir.mkdir(exist_ok=True)
+    log_dir.mkdir(exist_ok=True)
 
 # Initialize directories on startup
 ensure_directories()
